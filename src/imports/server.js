@@ -49,13 +49,7 @@ VueSSR.createApp = function (context) {
         // Store prefetch
         ...matchedComponents.map(component => {
           return component.preFetch && component.preFetch(store)
-        }),
-        // Apollo prefetch
-        apolloProvider.prefetchAll({
-          /* Context object */
-          route: router.currentRoute,
-          // You could also add the store here
-        }, matchedComponents),
+        })
       ]).then(() => {
         isDev && console.log(`[SSR] Data prefetch: ${Date.now() - s}ms`)
 
@@ -67,8 +61,6 @@ VueSSR.createApp = function (context) {
         // the initial data fetching on the client.
 
         js += `window.__INITIAL_STATE__=${JSON.stringify(store.state)};`
-
-        js += apolloProvider.exportStates()
 
         resolve({
           app,

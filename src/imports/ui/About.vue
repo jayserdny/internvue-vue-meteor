@@ -5,7 +5,7 @@
       Using Meteor and Vue together!
     </p>
     <p>
-      This app is SSR-enabled!
+      This app is SSR-enabled! YEY!
     </p>
     <p>
       <a href="https://github.com/Akryum/vue-meteor-demo">Sources</a>
