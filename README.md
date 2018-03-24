@@ -7,9 +7,9 @@
 #### Installation
 There are few steps to get this project running. 
 
-1 - Clone this repo ```https://github.com/jayserdny/internvue-vue-meteor```
-2 - In the console, navigate to the folder where you did cloned the repo.
-3 - Inside project folder, run the following command to install dependecies: ```meteor npm i```
+- Clone this repo ```https://github.com/jayserdny/internvue-vue-meteor```
+- In the console, navigate to the folder where you did cloned the repo.
+- Inside project folder, run the following command to install dependecies: ```meteor npm i```
 
 #### How to run
 
