@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-toolbar md-elevation="0" class="md-primary blue-bg fixed-header paddings">
+    <md-toolbar md-elevation="0" class="md-primary transparent-bg fixed-header paddings">
       <md-button class="md-icon-button" @click="showNavigation = true">
         <md-icon>menu</md-icon>
       </md-button>
