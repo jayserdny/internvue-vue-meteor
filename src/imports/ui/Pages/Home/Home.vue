@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HomeHeader style="background: linear-gradient(0deg, #2196f3d9, #2196f3d9), url(http://csreduhub.com/wp-content/uploads/2017/01/columbia_university_wallpaper.jpg);"/>
+    <HomeHeader class="home-bg parallax" />
     <HomeSponsors class="white-bg padding-bottom "  />
     <HomeAboutPage />
     <HomeHow />
@@ -9,7 +9,11 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
+
+  .home-bg {
+    background: linear-gradient(0deg, #2196f3d9, #2196f3d9), url(http://csreduhub.com/wp-content/uploads/2017/01/columbia_university_wallpaper.jpg);
+  }
   .full-width {
     width: 100%;
     height: 100%;

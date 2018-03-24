@@ -1,6 +1,6 @@
 <template>
   <div>
-    About us page
+    About us page should be 
   </div>
 </template>
 
