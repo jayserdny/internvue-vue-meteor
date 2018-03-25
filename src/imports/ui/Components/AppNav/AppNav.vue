@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-toolbar md-elevation="0" class="md-primary transparent-bg fixed-header paddings">
+    <md-toolbar md-elevation="1.5" class="md-primary transparent-bg fixed-header paddings">
       <md-button class="md-icon-button" @click="showNavigation = true">
         <md-icon>menu</md-icon>
       </md-button>
@@ -12,7 +12,7 @@
         <md-button class="md-small-hide" @click="showSidepanel = true">Intern Stories</md-button>
         <div class="md-small-hide vertical-separator"></div>
         <md-button class="md-small-hide" @click="showDialog = true">Sign in</md-button>
-        <md-button class="md-raised md-small-hide rounded">New Start</md-button>
+        <md-button class="md-raised md-small-hide rounded green-bg white-text">New Start</md-button>
       </div>
       
     </md-toolbar>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container justify-content-center align-content-center text-center">
+  <div class="container justify-content-center align-content-center text-center margin-bottom:10px">
     <div class="row offset-top">
       <div class="col-12">
         <p><strong>Our users have got internship programs at</strong></p>
@@ -56,11 +56,13 @@
 
   .offset-top {
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .custom-padding {
     padding: 19px 15px 0;
     vertical-align: middle;
+    margin-bottom: 20px;
   }
 
   .black-white {

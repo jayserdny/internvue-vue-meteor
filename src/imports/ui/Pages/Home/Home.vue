@@ -26,6 +26,13 @@
   .padding-bottom {
     padding-bottom: 15px;
   }
+  #left{
+    float: left;
+    margin-right: 40px;
+}
+#right{
+   float: left;
+}
 </style>
 
 <script>
