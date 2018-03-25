@@ -1,6 +1,6 @@
 <template>
   <div>
-    How does it work page
+    
   </div>
 </template>
 

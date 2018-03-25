@@ -14,51 +14,36 @@
                   </div>
                   <ul class="brand-logos text-center ">
                         <li>
-                              <img alt="Microsoft" height="38" 
-                                   src="https://d2ogrdw2mh0rsl.cloudfront.net/production/images/static/brands/microsoftlogo.svg?1459843129" 
+                              <img alt="JP Morgan and Chase" height="28" 
+                                   src="http://compliancejobs.com/wp-content/uploads/2017/07/jpmorgan-chase_416x416-300x300.jpg" 
+                                   width="145">
+                        </li>
+
+                        <li>
+                              <img alt="Ogilvy" height="28" 
+                                   src="https://seeklogo.com/images/O/Ogilvy-logo-BAD7120A87-seeklogo.com.png" 
+                                   width="90">
+                        </li>
+                  
+                        <li class="hide-xs hide-sm hide-md">
+                              <img alt="The Met" height="75" 
+                                   src="https://news.artnet.com/app/news-upload/2016/02/CbhuHYrW4AAzpiV-1024x859.jpg"
+                                    width="70">
+                        </li>
+
+                        <li class="hide-xs">
+                              <img alt="Lincoln Center" height="88" 
+                                   src="https://photos.prnewswire.com/prnvar/20150318/183012LOGO" 
+                                   width="125">
+                        </li>
+
+                        <li class="hide-xs">
+                              <img alt="Bank of America" height="130" 
+                                   src="https://www.famouslogos.us/images/bank-of-america-logo.jpg" 
                                    width="175">
                         </li>
 
-                        <li>
-                              <img alt="jQuery" height="28" 
-                                   src="https://d2ogrdw2mh0rsl.cloudfront.net/production/images/static/brands/jquery.svg?1459843129" 
-                                   width="128">
-                        </li>
-                  
-                        <li class="hide-xs hide-sm hide-md">
-                              <img alt="Twitter" height="55" 
-                                   src="https://d98b8t1nnulk5.cloudfront.net/production/images/static/brands/twitterlogo.svg?1459843129"
-                                    width="60">
-                        </li>
-
-                        <li class="hide-xs">
-                              <img alt="RBS" height="28" 
-                                   src="https://dgzoq9b5asjg1.cloudfront.net/production/images/static/brands/rbslogo.svg?1459843129" 
-                                   width="95">
-                        </li>
-
-                        <li class="hide-xs">
-                              <img alt="Air BnB" height="37" 
-                                   src="https://d3but80xmlhqzj.cloudfront.net/production/images/static/brands/airbnblogo.svg?1459843129" 
-                                   width="110">
-                        </li>
-
-                        <li>
-                              <img alt="MIT" height="39" 
-                                   src="https://dgzoq9b5asjg1.cloudfront.net/production/images/static/brands/mitlogo.svg?1459843129" 
-                                   width="70">
-                        </li>
-                  
-                        <li class="hide-xs hide-sm hide-md">
-                              <img alt="Bose" height="26" 
-                                   src="https://d3but80xmlhqzj.cloudfront.net/production/images/static/brands/boselogo.svg?1459843129" 
-                                   width="156">
-                        </li>
-                        <li class="hide-xs hide-sm hide-md">
-                              <img alt="Wikipedia" height="27" 
-                                   src="https://dgzoq9b5asjg1.cloudfront.net/production/images/static/brands/wikipedia_wordmark.svg?1459843129" 
-                                   width="161">
-                        </li>
+                      
                   </ul>
             </section>
       </div>

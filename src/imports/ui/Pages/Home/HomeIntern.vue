@@ -1,6 +1,6 @@
 <template>
   <div>
-    Intern Stories Page
+    
   </div>
 </template>
 
