@@ -18,6 +18,10 @@ console.log('tracker installed')
 import VueMaterial from 'vue-material/dist/vue-material.min.js';
 Vue.use(VueMaterial);
 
+// Boostrap
+import BootstrapVue from 'bootstrap-vue';
+Vue.use(BootstrapVue);
+
 
 // Vue Js Google Maps
 import VueGoogleMaps from 'vue-googlemaps'

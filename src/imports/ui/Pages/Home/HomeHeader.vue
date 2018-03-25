@@ -1,12 +1,19 @@
 <template>
   <header class="home-header full-height blue-bg">
-      <div class="titles-wrap">
-            <h1 class="white-text text-centered break">Get your internship, start today!</h1>
-            <p class="text-centered white-text">Never feel anxious and clueless about your interview again!</p>
-            <md-button class="md-raised md-small-hide rounded float-right green-bg white-text">
-                  Press Enter To Start
+    <div class="container w-100 h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-md-12">
+          <h1 class="white-text text-centered break margin-bottom">Get your internship, start today!</h1>
+          <p class="text-centered white-text margin-bottom">Never feel anxious and clueless about your interview again!</p>
+          <div class="justify-content-center align-content-center text-center">
+            <!-- <button type="button" class="btn green-bg white-text">Press Enter To Start</button> -->
+            <md-button class="md-raised rounded green-bg white-text text-centered">
+              Press Enter To Start
             </md-button>
+          </div>
+        </div>
       </div>
+    </div>
   </header>
 </template>
 
@@ -20,13 +27,8 @@
       height: 70vh;
   }
 
-  .titles-wrap {
-      position: relative;
-      float: left;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: corbel;
+  .margin-bottom {
+    margin-bottom: 25px;
   }
 
 </style>
