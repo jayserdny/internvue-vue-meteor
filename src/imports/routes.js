@@ -1,19 +1,51 @@
-import Vue from 'vue'
+import Vue from 'vue';
+import { Meteor } from 'meteor/meteor';
+import NotFound from './ui/NotFound.vue';
+import App from './ui/app/App.vue';
+import Home from './ui/Pages/Home/Home.vue';
 
-import NotFound from './ui/NotFound.vue'
-import Home from './ui/Pages/Home/Home.vue'
-import Items from './ui/Items.vue'
-import Notes from './ui/Notes.vue'
-import GoogleMap from './ui/GoogleMap.vue'
-import Async from './ui/Async.vue'
-import About from './ui/About.vue'
+/**
+ * Method to track meteor user to load corresponding pages
+ * @param {String} type: Type of the page
+ * @param {Object} ob: Object with name of the page
+ * @param {Event} next: Emitter for Vue Router
+ */
+function track_user(type, ob, next) {
+  if (type === "home") {
+    if (Meteor.user()) {
+      next(ob)
+    } 
+    else {
+      next()
+    }
+  }
+
+  else if (type === "app") {
+    if (Meteor.user()) {
+      next()
+    } else {
+      next(ob)
+    }
+  }
+  
+
+}
 
 export default [
-  { path: '/', name: 'home', component: Home },
-  { path: '/shop', name: 'shop', component: Items },
-  { path: '/notes', name: 'notes', component: Notes, meta: { showCart: true } },
-  { path: '/map', name: 'map', component: GoogleMap },
-  { path: '/async', name: 'async', component: Async },
-  { path: '/about', name: 'about', component: About },
-  { path: '*', name: 'not-found', component: NotFound },
+  { 
+    path: '/', 
+    name: 'home', 
+    component: Home,
+    beforeEnter: (to, from, next) => {
+      track_user("home", {name: "app"}, next);
+    }
+  },
+  { 
+    path: '/app', 
+    name: 'app', 
+    component: App,
+    beforeEnter: (to, from, next) => {
+      track_user("app", {name: "home"}, next);
+    }
+  },
 ]

@@ -17,7 +17,6 @@ shell-server@0.3.1            # Server-side component of the `meteor shell` comm
 
 static-html
 
-akryum:vue-component
 akryum:vue-less
 akryum:vue-ssr
 aldeed:simple-schema
@@ -28,3 +27,4 @@ akryum:vue-sass
 akryum:vue-coffee
 akryum:vue-pug
 accounts-password@1.5.0
+akryum:vue-component

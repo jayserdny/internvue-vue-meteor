@@ -11,7 +11,8 @@
         <md-button class="md-small-hide" @click="showSidepanel = true">How does it work</md-button>
         <md-button class="md-small-hide" @click="showSidepanel = true">Intern Stories</md-button>
         <div class="md-small-hide vertical-separator"></div>
-        <md-button class="md-small-hide" @click="showDialog = true">Sign in</md-button>
+        <md-button class="md-small-hide" v-if="user">Profile</md-button>
+        <md-button class="md-small-hide" v-else @click="showDialog = true">Sign in</md-button>
         <md-button class="md-raised md-small-hide rounded">New Start</md-button>
       </div>
       
@@ -50,9 +51,13 @@
 
       <md-tabs md-dynamic-height>
         <md-tab md-label="Sign In">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam mollitia dolorum dolores quae commodi impedit possimus qui, atque at voluptates cupiditate. Neque quae culpa suscipit praesentium inventore ducimus ipsa aut.</p>
+          <form @submit.prevent="submitForm">
+            <label>username</label>
+            <input type="text" v-model="formData.username" />
+            <label>password</label>
+            <input type="password" v-model="formData.password" />
+            <button>Login</button>
+          </form>
         </md-tab>
 
         <md-tab md-label="Sign Up">
@@ -76,8 +81,27 @@
     data: () => ({
       showNavigation: false,
       showSidepanel: false,
-      showDialog: false
-    })
+      showDialog: false,
+      formData: {
+        username: '',
+        password: ''
+      }
+    }),
+    computed: {
+      user() {
+        return this.$store.state.auth.user
+      }
+    },
+    methods: {
+      submitForm() {
+        this.$store.dispatch('submitLoginForm', this.formData).then(data => {
+          if (data.status == true) {
+            this.showDialog = false;
+            this.$router.push({ name: "app"});
+          }
+        })
+      }
+    }
   }
 </script>
 

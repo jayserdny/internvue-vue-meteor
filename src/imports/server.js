@@ -1,5 +1,4 @@
 import './api/publications'
-
 import { VueSSR } from 'meteor/akryum:vue-ssr'
 import CreateApp from './app'
 
@@ -30,6 +29,8 @@ VueSSR.createApp = function (context) {
     // set router's location
     router.push(context.url)
 
+    
+
     // wait until router has resolved possible async hooks
     router.onReady(() => {
       const matchedComponents = router.getMatchedComponents()
@@ -38,6 +39,8 @@ VueSSR.createApp = function (context) {
       if (!matchedComponents.length) {
         reject({ code: 404 })
       }
+
+      
 
       let js = ''
 
@@ -61,7 +64,7 @@ VueSSR.createApp = function (context) {
         // the initial data fetching on the client.
 
         js += `window.__INITIAL_STATE__=${JSON.stringify(store.state)};`
-
+        
         resolve({
           app,
           js,

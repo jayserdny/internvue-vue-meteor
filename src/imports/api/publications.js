@@ -11,3 +11,7 @@ Meteor.publish('notes', function (limit) {
 Meteor.publish('items', function () {
   return Items.find({})
 })
+
+Meteor.publish('users', () => {
+  return Meteor.users.find({});
+});
