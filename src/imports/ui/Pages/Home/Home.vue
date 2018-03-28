@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="home">
     <HomeHeader class="home-bg parallax" />
     <HomeSponsors class="white-bg padding-bottom "  />
     <HomeAboutPage />
+    <HomeTracks/>
     <HomeHow />
     <HomeIntern />
     <HomeFooter />
@@ -33,6 +34,9 @@
 #right{
    float: left;
 }
+.home{
+  background-color: #ffffff;
+}
 </style>
 
 <script>
@@ -42,6 +46,7 @@
   import HomeAboutPage from './HomeAbout.vue';
   import HomeHow from './HomeHow.vue';
   import HomeIntern from './HomeIntern.vue';
+  import HomeTracks from './HomeTracks.vue';
 
   export default {
     name: "HomePage",
@@ -51,7 +56,8 @@
       HomeFooter,
       HomeAboutPage,
       HomeHow,
-      HomeIntern
+      HomeIntern,
+      HomeTracks
     }
   };
 </script>

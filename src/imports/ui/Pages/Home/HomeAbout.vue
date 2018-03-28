@@ -10,13 +10,14 @@
 </div>
 </div>
 </div>
-
-<div class="container justify-content-center align-content-center text-center">
-  <div class="row">
-    <div class="col">
-    <iframe width="400" height="600" src="https://www.youtube.com/embed/0JQzRpPs0xM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="container justify-content-center text-center">
+  <div class="row ">
+    <div class="col" style= "height:350px;">
+      <div class="h_iframe">
+    <iframe src="https://www.youtube.com/embed/0JQzRpPs0xM"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
-    <div class="col ">
+    </div>
+    <div class="col text-left align-content-center padding:30px;">
       <h6> Your Future is Shining.</h6>
       <p>Use our tool to help you get your dream internship</p>
       <md-button class="md-raised rounded green-bg white-text text-centered">
@@ -25,52 +26,48 @@
     </div>
 </div>  
 </div>
-<div class="jumbotron text-white">
-    
-    <p class="lead"><strong>2013, NACE reported that only 63 percent of graduating students who had held paid internships received a job offer by graduation.<br>It found that 60% of respondents in paid internships received at least one job offer. </strong></p>
-
-    
+<div class="jumbotron jumbotron-fluid text-white">
+  <div class="container">
+ <p class="lead"><strong>2013, NACE reported that only 63 percent of graduating students who had held paid internships received a job offer by <br> graduation.It found that 60% of respondents in paid internships received at least one job offer. </strong></p>
 </div>
-
+</div>
 
 </div>
 </template>
 
 <style lang="scss" scoped>
-  
 .offset-top {
-    margin-top: 20px;
-    margin-bottom: 50px;
-  
-  }
-
-  p {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 13px;
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
-
-.row{
-    overflow: hidden; 
+p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
 }
-
-[class*="col-"]{
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
+div {
+  padding: 15px;
+  margin-block-start: 10px;
 }
-  div {
-    padding: 20px;
-  }
-  .jumbotron{
-    background-color: #4daaf6;
-    font-size: 20px;
-    text-align: center;
-    height: 200px;
-  }
+.jumbotron {
+  background-color: #4daaf6;
+  font-size: 20px;
+  text-align: center;
+  height: 200px;
+  padding: 30px;
+  font-style: bold;
+  margin-top: 30px;
+}
+.h_iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;
+}
 </style>
 
 <script>
- 
-  export default {
-    name: "HomeAboutPage",
-  };
+export default {
+  name: "HomeAboutPage"
+};
 </script>
