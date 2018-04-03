@@ -2,51 +2,40 @@
   <div class="container justify-content-center align-content-center text-center margin-bottom:10px">
     <div class="row offset-top">
       <div class="col-12">
-        <p><strong>Our users have got internship programs at</strong></p>
+        <p><strong>Our users have worked at</strong></p>
       </div>
     </div>
     <div class="row black-white">
       <div class="col-sm custom-padding">
-        <img alt="Microsoft" height="38" 
-             src="https://d2ogrdw2mh0rsl.cloudfront.net/production/images/static/brands/microsoftlogo.svg?1459843129" 
-             width="175"
+        <img alt="Jp Morgan and Chase" height="50" 
+             src="https://www.paxata.com/wp-content/uploads/morgan-chase-logo.png" 
+             width="100"
         />
       </div>
       <div class="col-sm custom-padding">
-        <img alt="jQuery" height="28" 
-             src="https://d2ogrdw2mh0rsl.cloudfront.net/production/images/static/brands/jquery.svg?1459843129" 
+        <img alt="OgiIvy" height="50" 
+             src="http://www.hispanicprblog.com/wp-content/uploads/2011/10/ogilvy-logo.png" 
              width="128" 
         />
       </div>
       <div class="col-sm custom-padding">
-        <img alt="RBS" height="28" 
-             src="https://dgzoq9b5asjg1.cloudfront.net/production/images/static/brands/rbslogo.svg?1459843129" 
-             width="95" 
+        <img alt="The Met" height="100" 
+             src="http://logok.org/wp-content/uploads/2015/01/The-Met-Logo-2016-640x480.png" 
+             width="100" 
         />
       </div>
       <div class="col-sm custom-padding">
-        <img alt="Air BnB" height="37" 
-             src="https://d3but80xmlhqzj.cloudfront.net/production/images/static/brands/airbnblogo.svg?1459843129" 
-             width="110" 
+        <img alt="Lincoln Center" height="100" 
+             src="https://assets.themuse.com/uploaded/companies/28/small_logo.png?v=11318d072beb58da0e5e51cdb10859a339453745ea5f6e063f67e7a0b712266c" 
+             width="130" 
         />
       </div>
       <div class="col-sm custom-padding">
-        <img alt="MIT" height="39" 
-             src="https://dgzoq9b5asjg1.cloudfront.net/production/images/static/brands/mitlogo.svg?1459843129" 
-             width="70" 
+        <img alt="Bank of America" height="100" 
+             src="http://diylogodesigns.com/blog/wp-content/uploads/2016/08/Bank-of-America-Logo-vector-png-download.png" 
+             width="150" 
         />
-      </div>
-      <div class="col-sm custom-padding">
-        <img alt="Bose" height="26" 
-             src="https://d3but80xmlhqzj.cloudfront.net/production/images/static/brands/boselogo.svg?1459843129" 
-             width="156" 
-        />
-      </div>
-      <div class="col-sm custom-padding">
-        <img alt="Wikipedia" height="27" 
-             src="https://dgzoq9b5asjg1.cloudfront.net/production/images/static/brands/wikipedia_wordmark.svg?1459843129" 
-             width="161" 
-        />
+  
       </div>
     </div>
   </div>
@@ -68,7 +57,7 @@
   .black-white {
     img {
       -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-      filter: grayscale(100%);
+      filter: grayscale(0%);
     }
 
   }

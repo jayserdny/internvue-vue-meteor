@@ -18,8 +18,7 @@
     </div>
     </div>
     <div class="col text-left align-content-center padding:30px;">
-      <h6> Your Future is Shining.</h6>
-      <p>Use our tool to help you get your dream internship</p>
+      <h6>Your future is shining. <br>Make it happen with our tool </h6>
       <md-button class="md-raised rounded green-bg white-text text-centered">
               Get Started
             </md-button>
@@ -28,7 +27,11 @@
 </div>
 <div class="jumbotron jumbotron-fluid text-white">
   <div class="container">
- <p class="lead"><strong>2013, NACE reported that only 63 percent of graduating students who had held paid internships received a job offer by <br> graduation.It found that 60% of respondents in paid internships received at least one job offer. </strong></p>
+    <h4>Why are internships so important? </h4> 
+ <p class="lead"><strong>Graduates who complete three or more internships are more likely to secure full-time employment, with 81.1 percent of graduates reporting that the internships helped them shift their career directions.
+ </strong></p>
+ <p class="text-right">-Sharp’s 2016 State of Millennial Hiring Report</p>
+
 </div>
 </div>
 
@@ -41,7 +44,7 @@
   margin-bottom: 0px;
 }
 p {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
 }
 div {

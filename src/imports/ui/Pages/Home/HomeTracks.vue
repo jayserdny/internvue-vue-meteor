@@ -1,6 +1,6 @@
 <template>
   <div> 
-    <div class="container justify-content-center align-content-center text-center">
+    <div class="container justify-content-center align-content-center text-center text-blue ">
     <div class="row offset-top">
       <div class="col-12">
         <p><strong>Three Tracks To Help You Land Your Internship </strong></p>
@@ -23,8 +23,8 @@
 </div>
   <div class="jumbotron jumbotron-fluid text-white margin-top:30px">
   <div class="container justify-content-right align-content-right">
- <p class="lead"><strong>Track your preparation progress with our dashboard</strong></p>
-  <img style="float: right;"  src="https://h5p.org/sites/default/files/styles/medium-logo/public/logos/chart-icon-color.png?itok=kpLTYHHJ" height="190" width="150" /></div>
+ <p class="lead" style="float: left;"><strong>Track your preparation progress with our dashboard</strong></p>
+  <img style="float: right;"  src="dashboard1.png" height="190" width="300" /></div>  <!--not flexible with length -->
 
 </div>
   </div>

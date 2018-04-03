@@ -4,6 +4,7 @@
     <HomeSponsors class="white-bg padding-bottom "  />
     <HomeAboutPage />
     <HomeTracks/>
+    <HomeMajors/>
     <HomeHow />
     <HomeIntern />
     <HomeFooter />
@@ -47,6 +48,7 @@
   import HomeHow from './HomeHow.vue';
   import HomeIntern from './HomeIntern.vue';
   import HomeTracks from './HomeTracks.vue';
+  import HomeMajors from './HomeMajors.vue';
 
   export default {
     name: "HomePage",
@@ -57,7 +59,8 @@
       HomeAboutPage,
       HomeHow,
       HomeIntern,
-      HomeTracks
+      HomeTracks,
+      HomeMajors
     }
   };
 </script>
