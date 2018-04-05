@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <AppNav />
     <HomeHeader class="home-bg parallax" />
     <HomeSponsors class="white-bg padding-bottom "  />
     <HomeAboutPage />
@@ -41,6 +42,7 @@
 </style>
 
 <script>
+  import AppNav from "../../Components/AppNav/AppNav.vue";
   import HomeHeader from './HomeHeader.vue';
   import HomeSponsors from './HomeSponsors.vue';
   import HomeFooter from './HomeFooter.vue';
@@ -53,6 +55,7 @@
   export default {
     name: "HomePage",
     components: {
+      AppNav,
       HomeHeader,
       HomeSponsors,
       HomeFooter,

@@ -1,10 +1,16 @@
-
-import layout from './layout'
-import items from './items'
+import authModule from './auth.js'
 
 export default {
   modules: {
-    layout,
-    items,
+    auth: authModule
   },
+  state: {
+  	users: []
+  },
+	mutations: {
+		updateUsers(state, value) {
+			console.log('users state mutated')
+			state.users = value
+		}
+	}
 }

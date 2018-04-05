@@ -1,24 +1,20 @@
 <template>
   <main>
-    <AppNav />
     <router-view />
   </main>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { Meteor } from 'meteor/meteor'
 import AppNav from "./Components/AppNav/AppNav.vue";
-import Cart from "./Cart.vue";
 
 export default {
-  components: {
-    AppNav,
-    Cart
+  name: 'app',
+  meteor: {
+    meteorUser() {
+      this.$store.commit('updateUser', Meteor.user())
+    }
   },
-
-  computed: {
-    ...mapGetters("layout", ["showCart"])
-  }
 };
 </script>
 
