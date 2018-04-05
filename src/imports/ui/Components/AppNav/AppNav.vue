@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-toolbar md-elevation="0" class="md-primary transparent-bg fixed-header paddings">
+    <md-toolbar md-elevation="2" class="md-primary bg-blue fixed-header paddings">
       <md-button class="md-icon-button" @click="showNavigation = true">
         <md-icon>menu</md-icon>
       </md-button>
@@ -13,7 +13,7 @@
         <div class="md-small-hide vertical-separator"></div>
         <md-button class="md-small-hide" v-if="user">Profile</md-button>
         <md-button class="md-small-hide" v-else @click="showDialog = true">Sign in</md-button>
-        <md-button class="md-raised md-small-hide rounded">New Start</md-button>
+        <md-button class="md-raised md-small-hide rounded green-bg white-text">New Start</md-button>
       </div>
       
     </md-toolbar>

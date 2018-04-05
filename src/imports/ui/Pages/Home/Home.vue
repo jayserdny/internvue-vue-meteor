@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="home">
     <AppNav />
     <HomeHeader class="home-bg parallax" />
     <HomeSponsors class="white-bg padding-bottom "  />
     <HomeAboutPage />
+    <HomeTracks/>
+    <HomeMajors/>
     <HomeHow />
     <HomeIntern />
     <HomeFooter />
@@ -27,6 +29,16 @@
   .padding-bottom {
     padding-bottom: 15px;
   }
+  #left{
+    float: left;
+    margin-right: 40px;
+}
+#right{
+   float: left;
+}
+.home{
+  background-color: #ffffff;
+}
 </style>
 
 <script>
@@ -37,6 +49,8 @@
   import HomeAboutPage from './HomeAbout.vue';
   import HomeHow from './HomeHow.vue';
   import HomeIntern from './HomeIntern.vue';
+  import HomeTracks from './HomeTracks.vue';
+  import HomeMajors from './HomeMajors.vue';
 
   export default {
     name: "HomePage",
@@ -47,7 +61,9 @@
       HomeFooter,
       HomeAboutPage,
       HomeHow,
-      HomeIntern
+      HomeIntern,
+      HomeTracks,
+      HomeMajors
     }
   };
 </script>
