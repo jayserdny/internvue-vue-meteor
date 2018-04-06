@@ -126,14 +126,14 @@
          * listener for the scroll.
          */
         beforeMount() {
-            window.addEventListener("scroll", this.handleScroll);
+            window.addEventListener("scroll", this.handleScroll, {passive: true});
         },
 
         /**
          * Method to remove scroll listener before the component is destroyed.
          */
         beforeDestroy() {
-            window.removeEventListener("scroll", this.handleScroll);
+            window.removeEventListener("scroll", this.handleScroll, {passive: true});
         }
     };
 </script>
