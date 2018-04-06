@@ -1,11 +1,11 @@
 <template>
-  <div class="container justify-content-center align-content-center text-center margin-bottom:10px">
+  <div class="container margin-bottom:10px">
     <div class="row offset-top">
       <div class="col-12">
-        <p><strong>Our users have worked at</strong></p>
+        <p class="gray-text"><strong>Our users have landed internship programs at</strong></p>
       </div>
     </div>
-    <div class="row black-white">
+    <div class="row justify-content-center align-content-center text-center">
       <div class="col-sm custom-padding">
         <img alt="Jp Morgan and Chase" height="50" 
              src="https://www.paxata.com/wp-content/uploads/morgan-chase-logo.png" 

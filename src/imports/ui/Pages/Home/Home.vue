@@ -3,11 +3,10 @@
     <AppNav />
     <HomeHeader class="home-bg parallax" />
     <HomeSponsors class="white-bg padding-bottom "  />
+    <hr class="container" />
+    <br />
     <HomeAboutPage />
-    <HomeTracks/>
-    <HomeMajors/>
-    <HomeHow />
-    <HomeIntern />
+    <HomeTeam />
     <HomeFooter />
   </div>
 </template>
@@ -48,20 +47,20 @@
   import HomeFooter from './HomeFooter.vue';
   import HomeAboutPage from './HomeAbout.vue';
   import HomeHow from './HomeHow.vue';
-  import HomeIntern from './HomeIntern.vue';
   import HomeTracks from './HomeTracks.vue';
   import HomeMajors from './HomeMajors.vue';
+  import HomeTeam from './HomeTeam.vue';
 
   export default {
     name: "HomePage",
     components: {
       AppNav,
+      HomeTeam,
       HomeHeader,
       HomeSponsors,
       HomeFooter,
       HomeAboutPage,
       HomeHow,
-      HomeIntern,
       HomeTracks,
       HomeMajors
     }

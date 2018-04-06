@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <md-toolbar md-elevation="2" class="md-primary bg-blue fixed-header paddings">
-      <md-button class="md-icon-button" @click="showNavigation = true">
-        <md-icon>menu</md-icon>
+  <div v-on:scroll="handleScroll">
+    <md-toolbar md-elevation="0" 
+                :class="{'md-primary':true, 'md-transparent':(scroll < 500), 'fixed-header': true, 'paddings': true, 'header-hack': true}">
+
+      <md-button class="md-icon-button text-white" @click="showNavigation = true">
+        <md-icon class="text-white">menu</md-icon>
       </md-button>
-      <span class="md-title"><strong>InternClue</strong></span>
+      <span class="md-title text-white"><strong>PrepDecks</strong></span>
 
       <div class="md-toolbar-section-end">
         <md-button class="md-small-hide" @click="showSidepanel = true">About us</md-button>
@@ -13,12 +15,12 @@
         <div class="md-small-hide vertical-separator"></div>
         <md-button class="md-small-hide" v-if="user">Profile</md-button>
         <md-button class="md-small-hide" v-else @click="showDialog = true">Sign in</md-button>
-        <md-button class="md-raised md-small-hide rounded green-bg white-text">New Start</md-button>
+        <md-button class="md-raised md-small-hide rounded">Who's Hiring</md-button>
       </div>
       
     </md-toolbar>
 
-    <md-drawer :md-active.sync="showNavigation" md-fixed>
+    <md-drawer :md-active.sync="showNavigation" md-fixed class="drawer-hack">
       <md-toolbar class="md-transparent" md-elevation="0">
         <span class="md-title">My App name</span>
       </md-toolbar>
@@ -85,7 +87,9 @@
       formData: {
         username: '',
         password: ''
-      }
+      },
+      scroll: 0,
+      shadow: 0
     }),
     computed: {
       user() {
@@ -93,6 +97,12 @@
       }
     },
     methods: {
+
+      /**
+       * @method submitForm
+       * Method to submit the login form and push another route to the router,
+       * after sucess. Otherwise, user should know what happened.
+       */
       submitForm() {
         this.$store.dispatch('submitLoginForm', this.formData).then(data => {
           if (data.status == true) {
@@ -100,7 +110,39 @@
             this.$router.push({ name: "app"});
           }
         })
-      }
+      },
+
+      /**
+       * @method handleScroll
+       * Method to watch scroll of the view
+       */
+      handleScroll() {
+        this.scroll = window.scrollY;
+        if (this.scroll > 500) {
+          this.shadow = 2;
+        }
+
+        else if (this.scroll < 500) {
+          this.shadow = 0
+        }
+      },
+    },
+
+    /**
+     * Method that runs before the component is mount.
+     * This should be done since window scope is not available at server,
+     * so, it needs to wait before mounting it. This method will add the event
+     * listener for the scroll.
+     */
+    beforeMount () {
+      window.addEventListener('scroll', this.handleScroll);
+    },
+
+    /**
+     * Method to remove scroll listener before the component is destroyed.
+     */
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.handleScroll);
     }
   }
 </script>
@@ -125,5 +167,13 @@
 
   .md-content {
     padding: 16px;
+  }
+
+  .header-hack {
+    z-index: 99998;
+  }
+
+  .drawer-hack {
+    z-index: 99999;
   }
 </style>

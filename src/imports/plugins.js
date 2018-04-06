@@ -32,6 +32,20 @@ Vue.use(VueGoogleMaps, {
   },
 })
 
+import vueScrollto from 'vue-scrollto';
+Vue.use(vueScrollto, {
+  container: "body",
+  duration: 500,
+  easing: "ease",
+  offset: -90,
+  cancelable: true,
+  onStart: false,
+  onDone: false,
+  onCancel: false,
+  x: false,
+  y: true
+});
+
 // Vue Js Suppy
 import VueSupply from 'vue-supply'
 Vue.use(VueSupply)
