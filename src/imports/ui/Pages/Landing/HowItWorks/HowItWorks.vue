@@ -10,7 +10,7 @@
         <br /><br />
         <div class="feature28">
             <div class="wrap-feature-28 row">
-                <div class="col-lg-6 bg-cover" style="background-image:url(https://wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature28/img2.jpg)"></div>
+                <div class="col-lg-6 bg-cover" style="background-image:url(/images/how-it-works1.jpg)"></div>
                 <div class="col-lg-6">
                     <div class="side-content both-space">
                         <h2 class="title dark-pink">Questions Banks & Self-answer board</h2>
@@ -26,10 +26,10 @@
                         <p>Gain insights, and learn tips and tricks to score high at interviews.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 bg-cover" style="background-image:url(https://wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature28/img2.jpg)"></div>
+                <div class="col-lg-6 bg-cover" style="background-image:url(/images/how-it-works1.jpg)"></div>
             </div>
             <div class="wrap-feature-28 row">
-                <div class="col-lg-6 bg-cover" style="background-image:url(https://wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature28/img2.jpg)"></div>
+                <div class="col-lg-6 bg-cover" style="background-image:url(/images/how-it-works1.jpg)"></div>
                 <div class="col-lg-6">
                     <div class="side-content both-space">
                         <h2 class="title light-blue">Interview PrepDecks</h2>

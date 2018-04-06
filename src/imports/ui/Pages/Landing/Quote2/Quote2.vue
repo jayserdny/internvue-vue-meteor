@@ -1,7 +1,7 @@
 <template>
     <div class="bg-light">
         <section>
-            <div id="banner1" class="banner spacer" style="background-image:url(https://wrappixel.com/demos/ui-kit/wrapkit/assets/images/form-banners/banner1/banner-bg.jpg);">
+            <div id="banner1" class="banner spacer" style="background-image:url(/images/covers/stats.jpg);">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7 col-lg-5 align-self-center" data-aos="fade-right" data-aos-duration="1500">
@@ -10,7 +10,7 @@
                             <footer class="blockquote-footer text-right">Anatole France</footer>
                         </div>
                         <div class="col-md-5 col-lg-6 align-self-center ml-auto" data-aos="fade-left" data-aos-duration="1500">
-                            <img src="https://wrappixel.com/demos/ui-kit/wrapkit/assets/images/form-banners/banner1/banner-img.png" alt="Dashboard demo"
+                            <img src="/images/placeholders/banner-img.png" alt="Dashboard demo"
                                 class="img-fluid" />
                         </div>
                     </div>

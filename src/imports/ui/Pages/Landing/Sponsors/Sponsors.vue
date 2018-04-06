@@ -10,27 +10,27 @@
                 </div>
                 <div class="row client-box text-center op-7">
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Jp Morgan and Chase" width="100" height="100" src="https://www.paxata.com/wp-content/uploads/morgan-chase-logo.png"
+                        <img alt="Jp Morgan and Chase" width="100" height="100" src="/images/sponsors/chase.png"
                         />
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Bank of America" height="100" src="http://diylogodesigns.com/blog/wp-content/uploads/2016/08/Bank-of-America-Logo-vector-png-download.png"
+                        <img alt="Bank of America" height="100" src="/images/sponsors/bofa.png"
                             width="150" />
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Jp Morgan and Chase" width="100" height="100" src="https://www.paxata.com/wp-content/uploads/morgan-chase-logo.png"
+                        <img alt="Jp Morgan and Chase" width="100" height="100" src="/images/sponsors/chase.png"
                         />
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Bank of America" height="100" src="http://diylogodesigns.com/blog/wp-content/uploads/2016/08/Bank-of-America-Logo-vector-png-download.png"
+                        <img alt="Bank of America" height="100" src="/images/sponsors/bofa.png"
                             width="150" />
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Jp Morgan and Chase" width="100" height="100" src="https://www.paxata.com/wp-content/uploads/morgan-chase-logo.png"
+                        <img alt="Jp Morgan and Chase" width="100" height="100" src="/images/sponsors/chase.png"
                         />
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Bank of America" height="100" src="http://diylogodesigns.com/blog/wp-content/uploads/2016/08/Bank-of-America-Logo-vector-png-download.png"
+                        <img alt="Bank of America" height="100" src="/images/sponsors/bofa.png"
                             width="150" />
                     </div>
                 </div>

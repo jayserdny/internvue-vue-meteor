@@ -25,7 +25,7 @@
 <style lang="css" scoped>
 
     .home-bg {
-        background: linear-gradient(0deg, #2196f3d9, #2196f3d9), url(http://artimesajblog.com/wp-content/uploads/2018/01/desk-top-desktop-4k-ultra-hd-wallpaper-and-background-3840x2160.jpg);
+        background: linear-gradient(0deg, #2196f3d9, #2196f3d9), url(/images/covers/hero.jpg);
     }
 
 </style>
