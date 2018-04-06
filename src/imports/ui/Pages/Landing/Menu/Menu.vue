@@ -55,12 +55,12 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="email" placeholder="email address">
+                                                    <input class="form-control" type="email" placeholder="email address" autocomplete="email">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="password" placeholder="password">
+                                                    <input class="form-control" type="password" placeholder="password" autocomplete="password">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 text-center">
