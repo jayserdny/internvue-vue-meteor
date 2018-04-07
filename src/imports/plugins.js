@@ -14,23 +14,19 @@ Vue.use(VueMeteorTracker)
 Vue.config.meteor.freeze = true
 console.log('tracker installed')
 
-// Vue Material Design
-import VueMaterial from 'vue-material/dist/vue-material.min.js';
-Vue.use(VueMaterial);
-
-// Boostrap
-import BootstrapVue from 'bootstrap-vue';
-Vue.use(BootstrapVue);
-
-
-// Vue Js Google Maps
-import VueGoogleMaps from 'vue-googlemaps'
-Vue.use(VueGoogleMaps, {
-  load: {
-    apiKey: 'AIzaSyCV908coKxEB_GcWuGucl79Zy_rIG4GQSI',
-    libraries: ['places'],
-  },
-})
+import vueScrollto from 'vue-scrollto';
+Vue.use(vueScrollto, {
+  container: "body",
+  duration: 500,
+  easing: "ease",
+  offset: -90,
+  cancelable: true,
+  onStart: false,
+  onDone: false,
+  onCancel: false,
+  x: false,
+  y: true
+});
 
 // Vue Js Suppy
 import VueSupply from 'vue-supply'

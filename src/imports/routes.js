@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import NotFound from './ui/NotFound.vue';
 import App from './ui/app/App.vue';
 import Home from './ui/Pages/Home/Home.vue';
+import Landing from './ui/Pages/Landing/landing.vue';
 
 /**
  * Method to track meteor user to load corresponding pages
@@ -35,7 +36,7 @@ export default [
   { 
     path: '/', 
     name: 'home', 
-    component: Home,
+    component: Landing,
     beforeEnter: (to, from, next) => {
       track_user("home", {name: "app"}, next);
     }
