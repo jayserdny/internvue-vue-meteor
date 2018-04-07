@@ -1,19 +1,36 @@
 <template>
-  <main>
+  <transition name="fade">
     <router-view />
-  </main>
+  </transition>
 </template>
 
-<script>
-import { Meteor } from 'meteor/meteor'
-import AppNav from "./Components/AppNav/AppNav.vue";
 
-export default {
-  name: 'app',
-  meteor: {
-    meteorUser() {
-      this.$store.commit('updateUser', Meteor.user())
-    }
-  },
-};
+<style>
+  .fade-enter-active,
+  .fade-leave-active {
+    transition-property: opacity;
+    transition-duration: .25s;
+  }
+
+  .fade-enter-active {
+    transition-delay: .25s;
+  }
+
+  .fade-enter,
+  .fade-leave-active {
+    opacity: 0
+  }
+</style>
+
+<script>
+  import { Meteor } from 'meteor/meteor';
+
+  export default {
+    name: 'app',
+    meteor: {
+      meteorUser() {
+        this.$store.commit('updateUser', Meteor.user())
+      }
+    },
+  };
 </script>

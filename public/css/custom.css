@@ -152,3 +152,19 @@
         padding: 0 10px;
     }
 }
+
+#mainNav .navbar-collapse .navbar-sidenav {
+    margin-top: 0 !important;
+}
+
+#mainNav.fixed-top .navbar-sidenav {
+    height: 100vh !important;
+}
+
+.content-wrapper {
+    height: 100vh !important;
+}
+
+#mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
+    background: #263238 !important;
+}
