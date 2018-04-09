@@ -185,7 +185,7 @@
                         <div class="card card-shadow">
                             <!-- Row -->
                             <div class="row no-gutters card-shadow">
-                                <div class="col-md-5 pro-pic" style="background:url(/images/placeholders/person.png) center center no-repeat / cover">
+                                <div class="col-md-5 pro-pic" style="background:url(/images/team/kusum.jpeg) center center no-repeat / cover">
                                     <div class="card-img-overlay">
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
