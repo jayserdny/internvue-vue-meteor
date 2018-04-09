@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="m-t-40">Our Amazing Users Community</h2>
+                        <h2 class="m-t-40">Our Amazing User Community</h2>
                         <br /><br />
                     </div>
                     <div class="col-md-12 ml-auto">
