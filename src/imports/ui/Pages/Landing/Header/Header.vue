@@ -8,11 +8,11 @@
                 <div class="col-md-12 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
                     <h2 class="title text-white">Land your Dream Internship – Start Today!</h2>
                     <h6 class="subtitle op-8 text-white">Feel confident and prepared to ace your next interview!</h6>
-                    <a class="btn btn-success-gradiant btn-md btn-arrow m-t-20" data-toggle="collapse" href="">
+                    <router-link :to="{ name: 'option'}" class="btn btn-success-gradiant btn-md btn-arrow m-t-20" data-toggle="collapse"  >
                         <span>Get Started Today!
                             <i class="ti-arrow-right"></i>
                         </span>
-                    </a>
+                    </router-link>
                 </div>
                 <!-- Column -->
             </div>
@@ -25,7 +25,7 @@
 <style lang="css" scoped>
 
     .home-bg {
-        background: linear-gradient(0deg, #2196f3d9, #2196f3d9), url(/images/covers/hero.jpg);
+        background:linear-gradient(0deg, #2196f3d9, #2196f3d9), url(/images/covers/hero.jpg);
     }
 
 </style>
