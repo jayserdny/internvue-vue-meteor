@@ -4,6 +4,7 @@ import NotFound from './ui/NotFound.vue';
 import App from './ui/app/App.vue';
 import Home from './ui/Pages/Home/Home.vue';
 import Landing from './ui/Pages/Landing/landing.vue';
+import Option from './ui/Pages/Option/option.vue';
 
 /**
  * Method to track meteor user to load corresponding pages
@@ -49,4 +50,12 @@ export default [
       track_user("app", {name: "home"}, next);
     }
   },
+
+  { 
+    path: '/get-started', 
+    name: 'option', 
+    component: Option,
+    
+  },
+
 ]

@@ -88,7 +88,7 @@
         </div>
         <!-- /.modal -->
         
-        </div>
+        
     </section>
 </template>
 
