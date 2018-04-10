@@ -1,7 +1,7 @@
 <template>
     <div class="bg-light">
         <section>
-            <div id="banner1" class="banner spacer" style="background-image:url(/images/covers/stats.jpg);">
+            <div id="subscribe" class="banner spacer">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7 col-lg-5 align-self-center" data-aos="fade-right" data-aos-duration="1500">
