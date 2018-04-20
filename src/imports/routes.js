@@ -37,17 +37,11 @@ export default [
     path: '/', 
     name: 'home', 
     component: Landing,
-    // beforeEnter: (to, from, next) => {
-    //   track_user("home", {name: "app"}, next);
-    // }
   },
   { 
     path: '/app', 
     name: 'app', 
     component: App,
-    // beforeEnter: (to, from, next) => {
-    //   track_user("app", {name: "home"}, next);
-    // }
   },
   {
     path: '/example',
