@@ -16,6 +16,7 @@
     "marker-clusterer-plus": "^2.1.4",
     "meteor-node-stubs": "^0.3.2",
     "moment": "^2.20.1",
+    "random": "^1.0.0-beta-1",
     "simpl-schema": "^1.4.2",
     "vue": "2.5.13",
     "vue-apollo": "^2.1.0-rc.8",

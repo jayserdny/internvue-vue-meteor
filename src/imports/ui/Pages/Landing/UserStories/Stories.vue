@@ -1,12 +1,14 @@
 <template>
     <section id="intern-stories">
         <div class="testimonial9 bg-light">
-            <br /><br />
+            <br />
+            <br />
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="m-t-40">Our Amazing Users Community</h2>
-                        <br /><br />
+                        <h2 class="m-t-40">Our Amazing User Community</h2>
+                        <br />
+                        <br />
                     </div>
                     <div class="col-md-12 ml-auto">
                         <div class="testi9">
@@ -27,12 +29,12 @@
                                 </div>
                             </div>
                             <!-- item -->
-
                         </div>
                     </div>
                 </div>
             </div>
-            <br /><br />
+            <br />
+            <br />
         </div>
         <div class="feature22 bg-light">
             <div class="container">
@@ -45,31 +47,32 @@
                                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0JQzRpPs0xM" allowfullscreen></iframe>
                             </div>
                             <div class="card-body">
-                                <p class="card-text">Hear our users talking about their stories.</p>
+                                <p class="card-text">Hear our users sharing their stories.</p>
                             </div>
                         </div>
                     </div>
                     <!-- Column -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 justify-content-center align-self-center">
                         <div class="text-box">
-                            <small class="text-info font-medium">Lorem ipsum dolor sit amet</small>
-                            <h3 class="font-light">Lorem ipsum dolor sit amet, 
-                                <span class="text-megna"> consectetuer adipiscing elit</span>, sed diam nonummy nibh euismod tincidunt.</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                                ut laoreet dolore magna aliquam erat volutpat. </p>
-                            <p>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquis would be good to have.</p>
-                            <a class="btn btn-success-gradiant btn-md btn-arrow m-t-20" data-toggle="collapse" href="#">
-                                <span>Get Started
-                                    <i class="ti-arrow-right"></i>
-                                </span>
-                            </a>
+                            <!-- <small class="text-info font-medium">Subscribe to PrepDecks newsletter to reveice the latest information.</small> -->
+                            <h3 class="font-light">Want to learn more? 
+                                <span class="text-megna"> Join our waiting list!</span></h3>
+                            <p>Subscribe to our waiting list and be one of the first to use PrepDecks for your interviews.</p>
+                            <!-- <p>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquis would be good to have.</p> -->
+                            <div id="subscribe">
+                                <input type="text" name="email" placeholder="Enter Email Address" class="font-16" />
+                                <input type="submit" value="Subscribe" class="bg-success-gradiant font-semibold font-16 btn-rounded text-uppercase text-white text-center"
+                                />
+                            </div>
                         </div>
                     </div>
                     <!-- Column -->
                 </div>
             </div>
-            <br /><br />
-            <br /><br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     </section>
 </template>

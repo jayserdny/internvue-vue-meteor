@@ -4,7 +4,12 @@ import NotFound from './ui/NotFound.vue';
 import App from './ui/app/App.vue';
 import Home from './ui/Pages/Home/Home.vue';
 import Landing from './ui/Pages/Landing/landing.vue';
+<<<<<<< HEAD
 import Option from './ui/Pages/Option/option.vue';
+=======
+import QuestionsBank from './ui/app/QuestionsBank/QuestionsBank.vue';
+import Example from './ui/Example/Example.vue';
+>>>>>>> UI/Improvements
 
 /**
  * Method to track meteor user to load corresponding pages
@@ -29,8 +34,6 @@ function track_user(type, ob, next) {
       next(ob)
     }
   }
-  
-
 }
 
 export default [
@@ -38,18 +41,13 @@ export default [
     path: '/', 
     name: 'home', 
     component: Landing,
-    beforeEnter: (to, from, next) => {
-      track_user("home", {name: "app"}, next);
-    }
   },
   { 
     path: '/app', 
     name: 'app', 
     component: App,
-    beforeEnter: (to, from, next) => {
-      track_user("app", {name: "home"}, next);
-    }
   },
+<<<<<<< HEAD
 
   { 
     path: '/get-started', 
@@ -58,4 +56,20 @@ export default [
     
   },
 
+=======
+  {
+    path: '/example',
+    name: 'example',
+    component: Example
+  },
+  {
+    path: '/app/questions-bank',
+    name: 'questions-bank',
+    component: QuestionsBank
+  },
+  {
+    path: '*',
+    component: NotFound
+  }
+>>>>>>> UI/Improvements
 ]

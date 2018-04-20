@@ -8,26 +8,22 @@
                         <h5 class="title">Our users have landed internship programs at</h5>
                     </div>
                 </div>
-                <div class="row client-box text-center op-7">
+                <div class="row client-box text-center op-7 justify-content-center">
                     <div class="col-lg-2 col-md-4">
                         <img alt="Jp Morgan and Chase" width="100" height="100" src="/images/sponsors/chase.png"
                         />
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Bank of America" height="100" src="/images/sponsors/bofa.png"
+                        <img alt="Ogilvy" height="50" src="/images/sponsors/ogilvy.jpg"
                             width="150" />
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Jp Morgan and Chase" width="100" height="100" src="/images/sponsors/chase.png"
+                        <img alt="The Met" width="100" height="60" src="/images/sponsors/the_met.jpg"
                         />
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <img alt="Bank of America" height="100" src="/images/sponsors/bofa.png"
+                        <img alt="The Lincoln Center" height="60" src="/images/sponsors/lincoln.png"
                             width="150" />
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <img alt="Jp Morgan and Chase" width="100" height="100" src="/images/sponsors/chase.png"
-                        />
                     </div>
                     <div class="col-lg-2 col-md-4">
                         <img alt="Bank of America" height="100" src="/images/sponsors/bofa.png"

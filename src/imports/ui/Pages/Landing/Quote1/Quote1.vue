@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="mini-spacer bg-info text-white c2a7">
+        <div class="spacer bg-info text-white c2a7">
             <div class="container">
                 <div>
                     <div class="display-7 align-self-center text-center">Why are internships so important? </div>

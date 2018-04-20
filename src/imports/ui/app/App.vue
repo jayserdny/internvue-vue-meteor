@@ -1,7 +1,7 @@
 <template>
     <div>
-      <p>You are logged in {{user.username}}!!!</p>
-      <button @click="logout">Logout</button>
+      <!-- <p>You are logged in {{user.username}}!!!</p>
+      <button @click="logout">Logout</button> -->
     </div>
 </template>
 

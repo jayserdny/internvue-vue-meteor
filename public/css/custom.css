@@ -38,17 +38,13 @@
     background-size: cover !important;
 }
 
-#banner1 {
-    background: right -3em center no-repeat #e9f3f8;
-}
-
-#banner1 h2 {
+#subscribe h2 {
     font-size: 48px;
     line-height: 1;
     letter-spacing: -1px;
 }
 
-#banner1 input {
+#subscribe input {
     line-height: 72px;
     padding: 0;
     margin: 0;
@@ -57,8 +53,8 @@
     vertical-align: top;
 }
 
-#banner1 input[type="text"] {
-    color: white;
+#subscribe input[type="text"] {
+    color: black;
     border-radius: 36px 0 0 36px;
     text-indent: 35px;
     padding-right: 15px;
@@ -68,7 +64,7 @@
     text-overflow: ellipsis;
 }
 
-#banner1 input[type="submit"] {
+#subscribe input[type="submit"] {
     border-radius: 0 36px 36px 0;
     width: auto;
     padding: 0 30px;
@@ -78,42 +74,42 @@
     transition: all 0.5s ease-in-out;
 }
 
-#banner1 input[type="submit"]:hover {
+#subscribe input[type="submit"]:hover {
     opacity: 0.7;
 }
 
 @media (min-width: 2301px) and (max-width: 2700px) {
-    #banner1 {
+    #subscribe {
         background-position: 70% center;
     }
 }
 
 @media (min-width: 1900px) and (max-width: 2300px) {
-    #banner1 {
+    #subscribe {
         background-position: 80% center;
     }
 }
 
 @media (min-width: 1500px) and (max-width: 1680px) {
-    #banner1 {
+    #subscribe {
         background-position: right center;
     }
 }
 
 @media (max-width: 1100px) {
-    #banner1 {
+    #subscribe {
         background-position: right -14em center;
     }
 
-    #banner1 h2 {
+    #subscribe h2 {
         font-size: 40px;
     }
 
-    #banner1 input[type="text"] {
+    #subscribe input[type="text"] {
         width: 59%;
     }
 
-    #banner1 input[type="submit"] {
+    #subscribe input[type="submit"] {
         padding: 0 20px;
     }
 }
@@ -123,32 +119,55 @@
         padding: 30px 0;
     }
 
-    #banner1 {
+    #subscribe {
         background-image: none;
     }
 
-    #banner1 input {
+    #subscribe input {
         font-size: 14px;
         line-height: 50px;
     }
 
-    #banner1 input[type="text"] {
+    #subscribe input[type="text"] {
         border-radius: 25px 0 0 25px;
         text-indent: 20px;
     }
 
-    #banner1 input[type="submit"] {
+    #subscribe input[type="submit"] {
         border-radius: 0 25px 25px 0;
         padding: 0 15px;
     }
 
-    #banner1 img {
+    #subscribe img {
         margin-top: 25px;
     }
 }
 
 @media (max-width: 320px) {
-    #banner1 input[type="submit"] {
+    #subscribe input[type="submit"] {
         padding: 0 10px;
+    }
+}
+
+#mainNav .navbar-collapse .navbar-sidenav {
+    margin-top: 0 !important;
+}
+
+#mainNav.fixed-top .navbar-sidenav {
+    height: 100vh !important;
+}
+
+.content-wrapper {
+    height: 100vh !important;
+}
+
+#mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
+    background: #263238 !important;
+}
+
+@media (min-width: 992px) {
+    
+    .content-wrapper {
+     margin-left: 310px;
     }
 }
