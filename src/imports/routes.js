@@ -4,12 +4,7 @@ import NotFound from './ui/NotFound.vue';
 import App from './ui/app/App.vue';
 import Home from './ui/Pages/Home/Home.vue';
 import Landing from './ui/Pages/Landing/landing.vue';
-<<<<<<< HEAD
 import Option from './ui/Pages/Option/option.vue';
-=======
-import QuestionsBank from './ui/app/QuestionsBank/QuestionsBank.vue';
-import Example from './ui/Example/Example.vue';
->>>>>>> UI/Improvements
 
 /**
  * Method to track meteor user to load corresponding pages
