@@ -47,8 +47,6 @@ export default [
     name: 'app', 
     component: App,
   },
-<<<<<<< HEAD
-
   { 
     path: '/get-started', 
     name: 'option', 
@@ -56,20 +54,4 @@ export default [
     
   },
 
-=======
-  {
-    path: '/example',
-    name: 'example',
-    component: Example
-  },
-  {
-    path: '/app/questions-bank',
-    name: 'questions-bank',
-    component: QuestionsBank
-  },
-  {
-    path: '*',
-    component: NotFound
-  }
->>>>>>> UI/Improvements
 ]
