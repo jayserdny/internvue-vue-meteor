@@ -8,7 +8,7 @@
                 <div class="col-md-12 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
                     <h2 class="title text-white">Land your Dream Internship – Start Today!</h2>
                     <h6 class="subtitle op-8 text-white">Feel confident and prepared to ace your next interview!</h6>
-                    <router-link class="btn btn-success-gradiant btn-md btn-arrow m-t-20" :to="{ name: 'questions-bank'}">
+                    <router-link class="btn btn-success-gradiant btn-md btn-arrow m-t-20" :to="{ name: 'example'}">
                             <span>Get Started Today!
                                     <i class="ti-arrow-right"></i>
                                 </span>

@@ -5,6 +5,7 @@ import App from './ui/app/App.vue';
 import Home from './ui/Pages/Home/Home.vue';
 import Landing from './ui/Pages/Landing/landing.vue';
 import QuestionsBank from './ui/app/QuestionsBank/QuestionsBank.vue';
+import Example from './ui/Example/Example.vue';
 
 /**
  * Method to track meteor user to load corresponding pages
@@ -36,9 +37,9 @@ export default [
     path: '/', 
     name: 'home', 
     component: Landing,
-    beforeEnter: (to, from, next) => {
-      track_user("home", {name: "app"}, next);
-    }
+    // beforeEnter: (to, from, next) => {
+    //   track_user("home", {name: "app"}, next);
+    // }
   },
   { 
     path: '/app', 
@@ -47,6 +48,11 @@ export default [
     // beforeEnter: (to, from, next) => {
     //   track_user("app", {name: "home"}, next);
     // }
+  },
+  {
+    path: '/example',
+    name: 'example',
+    component: Example
   },
   {
     path: '/app/questions-bank',
