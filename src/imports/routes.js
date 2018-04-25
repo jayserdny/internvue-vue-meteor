@@ -5,6 +5,7 @@ import App from './ui/app/App.vue';
 import Home from './ui/Pages/Home/Home.vue';
 import Landing from './ui/Pages/Landing/landing.vue';
 import Option from './ui/Pages/Option/option.vue';
+import MainPage from './ui/Pages/MainPage/work.vue';
 
 /**
  * Method to track meteor user to load corresponding pages
@@ -47,6 +48,13 @@ export default [
     name: 'option', 
     component: Option,
     
+  },
+
+  {
+    path: '/question-bank',
+    name: 'work',
+    component: MainPage,
+
   },
 
 ]
