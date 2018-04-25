@@ -6,6 +6,7 @@ import Home from './ui/Pages/Home/Home.vue';
 import Landing from './ui/Pages/Landing/landing.vue';
 import Option from './ui/Pages/Option/option.vue';
 import MainPage from './ui/Pages/MainPage/work.vue';
+import Dead from './ui/Pages/Dead/Dead.vue';
 
 /**
  * Method to track meteor user to load corresponding pages
@@ -42,6 +43,11 @@ export default [
     path: '/app', 
     name: 'app', 
     component: App,
+  },
+  { 
+    path: '/dead', 
+    name: 'dead', 
+    component: Dead,
   },
   { 
     path: '/get-started', 
