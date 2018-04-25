@@ -25,12 +25,13 @@
               </div>
             <!-- wrapper -->
               <div class="wrapper justify-content-left align-middle text-middle">
-                <div>
+                
+                 <router-link :to="{name: 'work'}" tag="div">
                   <img src="/images/optionImages/question.png" height="100px" alt="question" align="left" hspace="20" />
                   <h4><strong> Questions Bank </strong></h4>
                   <p><strong>Explore traditional, behavioral, and industry-specific interview questions </strong></p>
-                </div>
-
+                   </router-link>
+                  
                 <div>
                   <img src="/images/optionImages/lightBulb.png" height="100px" align="left" hspace="20" />
                   <h4>
@@ -99,5 +100,6 @@ img {
 <script>
 export default {
   name: "Option"
+
 };
-</script>
+  </script>

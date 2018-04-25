@@ -34,7 +34,7 @@
         name: "LandingHeader",
         methods: {
             openPage(page) {
-                this.$router.push({ name: page });
+                this.$router.push({ name: page }); 
             }
         }
     };

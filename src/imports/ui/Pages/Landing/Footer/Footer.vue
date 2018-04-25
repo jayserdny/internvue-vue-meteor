@@ -53,6 +53,14 @@
     </div>
 </template>
 
+
+<style lang="css" scoped>
+ 
+ .footer4 {
+     background-color: #e8e3e3;
+ }
+</style>
+
 <script>
 export default {
   name: "LandingFooter"
