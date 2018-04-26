@@ -4,73 +4,93 @@
       <!-- Sidebar Holder -->
       <nav id="sidebar" :class="{'active': (menu_show == true) }">
         <div class="sidebar-header">
-          <i class="ti-angle-left" href="" hspace="5px"></i> 
+          <router-link tag="i" class="ti-angle-left back-button" :to="{name: 'option'}" hspace="5px"></router-link>
           <p>Questions & Answers Building</p>
         </div>
-        <div class ="sidenav-icons">
-          <img src="/images/icons/checklist1.png" height="40px;" width="40px" hspace="15"/><!--*******-->
-          <img src="/images/icons/folder.png" height="40px;" width="40px" />
+        <hr />
+        <div class="sidenav-icons" id="myTab" role="tablist">
+          <a @click="selectTab('questions');" href="#" >
+            <img src="/images/icons/checklist1.png" height="40px;" width="40px" hspace="15" />
+          </a>
+          <a @click="selectTab('saved');" href="#">
+            <img src="/images/icons/folder.png" height="40px;" width="40px" />
+          </a>
         </div>
-        <ul class="list-unstyled components">
-          <li>
-            <a href="#traditionalSubmenu" data-toggle="collapse" aria-expanded="false">
-              Traditional &nbsp;&nbsp;
-            </a>
-            <ul class="collapse list-unstyled" id="traditionalSubmenu">
+        <hr />
+        <div class="tab-content">
+
+          <!-- QUESTIONS TAB -->
+          <div :class="{'tab-pane': true, 'show': (selected_tab == 'questions'), 'active': (selected_tab == 'questions')}">
+            <ul class="list-unstyled components">
+              <!-- TRADITIONAL QUESTIONS AREA START -->
               <li>
-                <a href="#">Tell me about yourself?</a>
+                <a @click="toggle_dropdown('traditional')" href="#" aria-expanded="true">
+                  Traditional &nbsp;&nbsp;
+                </a>
+                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (traditional_show == true)}">
+                  <li v-for="(question, index) in traditional_questions" v-bind:key="question._id">
+                    <a @click="chooseQuestion(question.question)" href="#" :class="{'selected': (display_message == question.question)}">
+                      {{ index + 1 }}.&nbsp;&nbsp;{{ question.question }}
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <!-- should be query for questions -->
+
+              <!-- TRADITIONAL QUESTIONS AREA END -->
+
+              <!-- BEHAVIORAL QUESTIONS AREA START -->
               <li>
-                <a href="#">What did you do at your last internship?</a>
+                <a @click="toggle_dropdown('behavioral')" href="#" aria-expanded="true">
+                  Behavioral &nbsp;&nbsp;
+                </a>
+                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (behavioral_show == true)}">
+                  <li v-for="(question, index) in behavioral_questions" v-bind:key="question._id">
+                    <a @click="chooseQuestion(question.question)" href="#" :class="{'selected': (display_message == question.question)}">
+                      {{ index + 1 }}.&nbsp;&nbsp;{{ question.question }}
+                    </a>
+                  </li>
+                </ul>
               </li>
+              <!-- BEHAVIORAL QUESTIONS AREA END -->
+
+              <!-- INDUSTRY AREA START -->
               <li>
-                <a href="#">How did you do at School?</a>
+                <a @click="toggle_dropdown('industry')" href="#" aria-expanded="true">
+                  Choose your Industry &nbsp;&nbsp;
+                </a>
+                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (industry_show == true)}">
+                  <li>
+                    <a href="#">Finance</a>
+                  </li>
+                  <!-- should be query for Industries -->
+                  <li>
+                    <a href="#">Marketing</a>
+                  </li>
+                  <li>
+                    <a href="#">Information Technology</a>
+                  </li>
+                </ul>
               </li>
+              <!-- INDUSTRY AREA END -->
             </ul>
-          </li>
-          <li>
-            <a href="#behaviouralSubmenu" data-toggle="collapse" aria-expanded="false">
-              Behavioral &nbsp;&nbsp;
-            </a>
-            <ul class="collapse list-unstyled" id="behaviouralSubmenu">
-              <li>
-                <a href="#">Describe your ability to adapt to new or changing technologies and/or systems.</a>
-              </li>
-              <!-- should be query for questions -->
-              <li>
-                <a href="#">Describe a situation when you demonstrated initiative.</a>
-              </li>
-              <li>
-                <a href="#">How do you juggle multiple priorities? What methods do you use to make sure nothing falls through the cracks and to minimize mistakes?</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#IndustrySubmenu" data-toggle="collapse" aria-expanded="false">
-              Choose your Industry &nbsp;&nbsp;
-            </a>
-            <ul class="collapse list-unstyled" id="IndustrySubmenu">
-              <li>
-                <a href="#">Finance</a>
-              </li>
-              <!-- should be query for Industries -->
-              <li>
-                <a href="#">Marketing</a>
-              </li>
-              <li>
-                <a href="#">Information Technology</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+          </div>
+          <!-- QUESTIONS TAB END -->
+
+          <!-- SAVED TAB START -->
+          <div :class="{'tab-pane': true, 'appear': (selected_tab == 'saved'), 'show': (selected_tab == 'saved'), 'active': (selected_tab == 'saved')}">
+            WIP
+          </div>
+          <!-- SAVED TAB END -->
+        </div>
+
       </nav>
+
       <!-- Page Content Holder -->
       <div id="content" :class="{'active': menu_show }">
         <nav class="navbar navbar-default navbar-expand-lg h6-nav-bar">
           <div class="container-fluid">
             <div class="navbar-header">
-              <button  v-on:click="toggleMenu()" type="button" id="sidebarCollapse" class="btn btn-light navbar-btn">
+              <button v-on:click="toggleMenu()" type="button" id="sidebarCollapse" class="btn navbar-btn">
                 <span class="ti-align-justify"></span>
               </button>
             </div>
@@ -81,33 +101,51 @@
                 </li>
               </ul>
               <div class="act-buttons">
-                  <button class="btn btn-success-gradiant waves-effect waves-light font-13" data-toggle="modal" data-target="#loginModal">
-                    Sign Up
-                  </button>
+                <button class="btn btn-success-gradiant waves-effect waves-light font-13" data-toggle="modal" data-target="#loginModal">
+                  Sign Up
+                </button>
               </div>
             </div>
           </div>
         </nav>
-        <p><strong>Choose a category from left side</strong>
-         <i class="fa fa-bookmark" style="font-size:24px; color:white; margin-left: 20px;"></i></p>
-       <div id="tips" >
-        <i class="ti-info-alt" lable ="Need Tips"></i>
-       </div>
+        <p>
+          <strong class="appear">{{ display_message }}</strong>
+          <i class="fa fa-bookmark" style="font-size:24px; color:white; margin-left: 20px;"></i>
+        </p>
+        <div id="tips">
+          <i class="ti-info-alt" lable="Need Tips"></i>
+        </div>
 
-       <div class="footer"><i class="ti-angle-up" href="" hspace="1px"></i>
-       <p>write your response</p>
-       </div>
+        <div class="footer">
+          <i class="ti-angle-up" href="" hspace="1px"></i>
+          <p>write your response</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
-<style scoped> 
-  
+
+<style lang="scss" scoped>
+  .selected {
+    font-weight: 600;
+  }
+
+  hr {
+    background-color: rgba(125, 125, 125, 0.52);
+  }
+
   p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
     color: #fff;
+  }
+
+  .back-button {
+    margin-top: -13px;
+    margin-right: 8px;
+    margin-left: -10px;
+    font-size: 36px;
   }
 
   a,
@@ -117,6 +155,7 @@
     text-decoration: none;
     transition: all 0.3s;
   }
+
   .navbar {
     padding: 15px 10px;
     background: #263238;
@@ -124,21 +163,23 @@
     border-radius: 0;
     margin-bottom: 40px;
   }
+
   .navbar-btn {
     box-shadow: none;
     outline: none !important;
     border: none;
     background: transparent;
-    
   }
+
   .line {
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
   }
+
   #sidebar {
-    width: 250px;
+    width: 320px;
     position: fixed;
     top: 0;
     left: 0;
@@ -148,13 +189,14 @@
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
-    
   }
+
   #sidebar.active {
-    margin-left: -250px;
+    margin-left: -320px;
   }
+
   #sidebar .sidebar-header {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     background: #263238;
     color: #fff;
     display: inline-flex;
@@ -167,34 +209,42 @@
     color: #32c6a6;
     background: #263238;
   }
+
   #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 2px solid #263238;
   }
+
   #sidebar ul p {
     color: #fff;
     padding: 10px;
   }
+
   #sidebar ul li a {
-    padding: 10px;
+    padding: 0 20px 20px 20px;
     font-size: 1.1em;
     display: block;
   }
+
   #sidebar ul li a:hover {
-    color: #8FBC8F;
+    color: #8fbc8f;
     background: #263238;
   }
+
   a[data-toggle="collapse"] {
     position: relative;
   }
+
   ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #263238;
   }
+
   ul.CTAs {
     padding: 20px;
   }
+
   ul.CTAs a {
     text-align: center;
     font-size: 0.9em !important;
@@ -202,16 +252,14 @@
     border-radius: 5px;
     margin-bottom: 5px;
   }
-  .sidenav-icons{
+
+  .sidenav-icons {
     margin-inline-start: 30px;
     margin-bottom: 10px;
   }
-  
-  /* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
+
   #content {
-    width: calc(100% - 250px);
+    width: calc(100% - 320px);
     padding: 30px;
     min-height: 100vh;
     transition: all 0.3s;
@@ -222,6 +270,7 @@
     color: #fff;
     text-align: center;
   }
+
   #content.active {
     width: 100%;
   }
@@ -230,20 +279,17 @@
     background-color: transparent;
   }
 
- #tips{
-  position: fixed;
-  right: 0;
-  top: 50%;
-  width: 8em;
-  margin-top: -2.5em;
-}
- 
-  /* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
+  #tips {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    width: 8em;
+    margin-top: -2.5em;
+  }
+
   @media (max-width: 768px) {
     #sidebar {
-      margin-left: -250px;
+      margin-left: -320px;
     }
     #sidebar.active {
       margin-left: 0;
@@ -252,29 +298,153 @@
       width: 100%;
     }
     #content.active {
-      width: calc(100% - 250px);
+      width: calc(100% - 320px);
     }
   }
 
-  .footer{ 
-      position: absolute;    
-       text-align: center;    
-       bottom: 0px; 
-       width: 100%;
-   }  
+  .footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .list-unstyled .show {
+    li {
+      opacity: 0;
+      animation: fadeIn 0.3s ease-in both;
+    }
+  }
+
+  .appear {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in both;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -2%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 </style>
+
 <script>
+  import { Meteor } from "meteor/meteor";
+  import { Questions } from "../../../api/collections";
+
   export default {
+    created() {
+      (this.CHOOSE_CATEGORY = "Choose a category from left side"),
+        (this.CHOOSE_QUESTION = "Now choose a question from the left side");
+    },
     data: () => {
       return {
-        menu_show: false
-      }
+        traditional_questions: [],
+        behavioral_questions: [],
+        menu_show: false,
+        traditional_show: false,
+        behavioral_show: false,
+        industry_show: false,
+        display_message:
+          "Choose a category from left side" || this.CHOOSE_CATEGORY,
+        is_category_selected: false,
+        selected_tab: "questions"
+      };
     },
     methods: {
-      
+      selectTab(tab) {
+        this.selected_tab = tab;
+      },
+
+      /**
+       * Method to choose question from sidebar
+       * @method chooseQuestion
+       * @param {String} question: Choosen Question
+       */
+      chooseQuestion(question) {
+        this.display_message = question;
+      },
+
+      /**
+       * Method to toggle menu
+       * @method toggleMenu
+       * @return void
+       */
       toggleMenu() {
-        console.log("got here")
         this.menu_show = !this.menu_show;
+      },
+
+      /**
+       * Method to toggle dropdown and hide oppened ones
+       * @method toggle_dropdown
+       * @param {String} item: reference to the dropdown being opened
+       * @return void
+       */
+      toggle_dropdown(item) {
+        if (item === "traditional") {
+          if (this.traditional_show === true) {
+            this.traditional_show = false;
+            this.is_category_selected = false;
+            this.display_message = this.CHOOSE_CATEGORY;
+          } else {
+            this.display_message = this.CHOOSE_QUESTION;
+            this.traditional_show = true;
+            this.behavioral_show = false;
+            this.industry_show = false;
+            this.is_category_selected = true;
+          }
+        } else if (item === "behavioral") {
+          if (this.behavioral_show === true) {
+            this.behavioral_show = false;
+            this.is_category_selected = false;
+            this.display_message = this.CHOOSE_CATEGORY;
+          } else {
+            this.display_message = this.CHOOSE_QUESTION;
+            this.behavioral_show = true;
+            this.traditional_show = false;
+            this.industry_show = false;
+            this.is_category_selected = true;
+          }
+        } else if (item === "industry") {
+          if (this.industry_show === true) {
+            this.industry_show = false;
+            this.is_category_selected = false;
+            this.display_message = this.CHOOSE_CATEGORY;
+          } else {
+            this.display_message = this.CHOOSE_QUESTION;
+            this.industry_show = true;
+            this.behavioral_show = false;
+            this.traditional_show = false;
+            this.is_category_selected = true;
+          }
+        }
+      }
+    },
+
+    meteor: {
+      // Subscribe to the reactive publication of question
+      // posted on server side
+      $subscribe: {
+        questions() {
+          return [];
+        }
+      },
+
+      // Query the traditional question from server side
+      // and propagate them to an array
+      traditional_questions() {
+        return Questions.find({ type: "traditional" });
+      },
+
+      // Query the behavioral question from server side
+      // and propagate them to an array
+      behavioral_questions() {
+        return Questions.find({ type: "behavioral" });
       }
     }
   };
