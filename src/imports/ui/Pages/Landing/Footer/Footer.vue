@@ -56,9 +56,9 @@
 
 <style lang="css" scoped>
  
- .footer4 {
+ /* .footer4 {
      background-color: #e8e3e3;
- }
+ } */
 </style>
 
 <script>

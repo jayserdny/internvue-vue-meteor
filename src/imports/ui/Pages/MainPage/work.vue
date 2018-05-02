@@ -2,7 +2,7 @@
   <div>
     <div class="wrapper">
       <!-- Sidebar Holder -->
-      <nav id="sidebar" :class="{'active': (menu_show == true) }">
+      <nav id="sidebar" :class="{'active': (menu_show === true) }">
         <div class="sidebar-header">
           <router-link tag="i" class="ti-angle-left back-button" :to="{name: 'option'}" hspace="5px"></router-link>
           <p>Questions & Answers Building</p>
@@ -20,16 +20,16 @@
         <div class="tab-content">
 
           <!-- QUESTIONS TAB -->
-          <div :class="{'tab-pane': true, 'show': (selected_tab == 'questions'), 'active': (selected_tab == 'questions')}">
+          <div :class="{'tab-pane': true, 'show': (selected_tab === 'questions'), 'active': (selected_tab === 'questions')}">
             <ul class="list-unstyled components">
               <!-- TRADITIONAL QUESTIONS AREA START -->
               <li>
                 <a @click="toggle_dropdown('traditional')" href="#" aria-expanded="true">
                   Traditional &nbsp;&nbsp;
                 </a>
-                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (traditional_show == true)}">
+                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (traditional_show === true)}">
                   <li v-for="(question, index) in traditional_questions" v-bind:key="question._id">
-                    <a @click="chooseQuestion(question.question)" href="#" :class="{'selected': (display_message == question.question)}">
+                    <a @click="chooseQuestion(question)" href="#" :class="{'selected': (display_message == question.question)}">
                       {{ index + 1 }}.&nbsp;&nbsp;{{ question.question }}
                     </a>
                   </li>
@@ -43,9 +43,9 @@
                 <a @click="toggle_dropdown('behavioral')" href="#" aria-expanded="true">
                   Behavioral &nbsp;&nbsp;
                 </a>
-                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (behavioral_show == true)}">
+                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (behavioral_show === true)}">
                   <li v-for="(question, index) in behavioral_questions" v-bind:key="question._id">
-                    <a @click="chooseQuestion(question.question)" href="#" :class="{'selected': (display_message == question.question)}">
+                    <a @click="chooseQuestion(question)" href="#" :class="{'selected': (display_message == question.question)}">
                       {{ index + 1 }}.&nbsp;&nbsp;{{ question.question }}
                     </a>
                   </li>
@@ -58,7 +58,7 @@
                 <a @click="toggle_dropdown('industry')" href="#" aria-expanded="true">
                   Choose your Industry &nbsp;&nbsp;
                 </a>
-                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (industry_show == true)}">
+                <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (industry_show === true)}">
                   <li>
                     <a href="#">Finance</a>
                   </li>
@@ -112,11 +112,17 @@
           <strong class="appear">{{ display_message }}</strong>
           <i class="fa fa-bookmark" style="font-size:24px; color:white; margin-left: 20px;"></i>
         </p>
+        <p v-if="selected_question !== null && answer !== null && answer !== ''">
+          <strong class="answer-place">Answer:&nbsp;&nbsp;&nbsp;</strong>{{ answer }}
+        </p>
         <div id="tips">
           <i class="ti-info-alt" lable="Need Tips"></i>
         </div>
 
         <div class="footer">
+          <p v-if="selected_question !== null">
+            <textarea rows="7" cols="80" v-model="answer" v-on:change="autoSave();" placeholder="Write your answer here"></textarea>
+          </p>
           <i class="ti-angle-up" href="" hspace="1px"></i>
           <p>write your response</p>
         </div>
@@ -126,6 +132,11 @@
 </template>
 
 <style lang="scss" scoped>
+
+  .answer-place {
+    color: #02eba8 !important;
+  }
+
   .selected {
     font-weight: 600;
   }
@@ -338,10 +349,15 @@
   import { Questions } from "../../../api/collections";
 
   export default {
+
+    // Variables to initialize on created event of the component
     created() {
       (this.CHOOSE_CATEGORY = "Choose a category from left side"),
         (this.CHOOSE_QUESTION = "Now choose a question from the left side");
     },
+    
+
+    // Instance variables of the component
     data: () => {
       return {
         traditional_questions: [],
@@ -353,10 +369,34 @@
         display_message:
           "Choose a category from left side" || this.CHOOSE_CATEGORY,
         is_category_selected: false,
-        selected_tab: "questions"
+        selected_tab: "questions",
+        selected_question: null,
+        answer: null
       };
     },
+
+    // Methods of the component
     methods: {
+
+      /**
+       * Method to autosave answer without any user interaction
+       * @method autoSave
+       * @return void
+       */
+      autoSave() {
+        let answer = {
+          id: this.selected_question._id,
+          answer: this.answer
+        };
+        localStorage.setItem(this.selected_question._id, JSON.stringify(answer));
+      },
+
+      /**
+       * Method to switch between questions and saved questions
+       * @method selectTab
+       * @param {String} tab: Name of the tab to selected
+       * @return void
+       */
       selectTab(tab) {
         this.selected_tab = tab;
       },
@@ -364,10 +404,19 @@
       /**
        * Method to choose question from sidebar
        * @method chooseQuestion
-       * @param {String} question: Choosen Question
+       * @param {Object} question: Choosen Question
        */
       chooseQuestion(question) {
-        this.display_message = question;
+        this.display_message = question.question; // Update the correct displayed message
+        this.selected_question = question; // Save a reference of the selected object
+
+        if (localStorage.getItem(question._id)) {
+          this.answer = JSON.parse(localStorage.getItem(question._id)).answer;
+        }
+        
+        else {
+          this.answer = null;
+        }
       },
 
       /**
@@ -391,6 +440,8 @@
             this.traditional_show = false;
             this.is_category_selected = false;
             this.display_message = this.CHOOSE_CATEGORY;
+            this.selected_question = null;
+
           } else {
             this.display_message = this.CHOOSE_QUESTION;
             this.traditional_show = true;
@@ -398,11 +449,15 @@
             this.industry_show = false;
             this.is_category_selected = true;
           }
+
         } else if (item === "behavioral") {
+
           if (this.behavioral_show === true) {
             this.behavioral_show = false;
             this.is_category_selected = false;
             this.display_message = this.CHOOSE_CATEGORY;
+            this.selected_question = null;
+
           } else {
             this.display_message = this.CHOOSE_QUESTION;
             this.behavioral_show = true;
@@ -410,11 +465,15 @@
             this.industry_show = false;
             this.is_category_selected = true;
           }
+
         } else if (item === "industry") {
+
           if (this.industry_show === true) {
             this.industry_show = false;
             this.is_category_selected = false;
             this.display_message = this.CHOOSE_CATEGORY;
+            this.selected_question = null;
+
           } else {
             this.display_message = this.CHOOSE_QUESTION;
             this.industry_show = true;
@@ -426,6 +485,7 @@
       }
     },
 
+    // Meteor specific methods
     meteor: {
       // Subscribe to the reactive publication of question
       // posted on server side
