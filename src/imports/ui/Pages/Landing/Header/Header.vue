@@ -24,7 +24,7 @@
 
 <style lang="css" scoped>
     .home-bg {
-        background:linear-gradient(0deg, #2196f3d9, #2196f3d9), url(/images/covers/hero.jpg);
+        background:linear-gradient(0deg, rgba(33, 150, 243, 0.8509803921568627),rgba(33, 150, 243, 0.8509803921568627)), url(/images/covers/hero.jpg);
     }
 </style>
 
