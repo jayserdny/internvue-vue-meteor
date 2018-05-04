@@ -8,8 +8,10 @@
           <p>Questions & Answers Building</p>
         </div>
         <hr />
+
+        <!-- SHOULD BE REPLACED WITH ICON BUTTONS INSTEAD OF IMAGES -->
         <div class="sidenav-icons" id="myTab" role="tablist">
-          <a @click="selectTab('questions');" href="#" >
+          <a @click="selectTab('questions');" href="#">
             <img src="/images/icons/checklist1.png" height="40px;" width="40px" hspace="15" />
           </a>
           <a @click="selectTab('saved');" href="#">
@@ -30,7 +32,8 @@
                 <ul :class="{'collapse': true, 'list-unstyled': true, 'show': (traditional_show === true)}">
                   <li v-for="(question, index) in traditional_questions" v-bind:key="question._id">
                     <a @click="chooseQuestion(question)" href="#" :class="{'selected': (display_message == question.question)}">
-                      {{ index + 1 }}.&nbsp;&nbsp;{{ question.question }}
+                        <i v-if="is_bookmarked(question._id)" class="fa fa-bookmark" style="font-size:17px; color:#8fbc8f; margin-left: -22px;    margin-right: 5px;"></i>
+                        {{ index + 1 }}.&nbsp;&nbsp;{{ question.question }}
                     </a>
                   </li>
                 </ul>
@@ -78,7 +81,24 @@
 
           <!-- SAVED TAB START -->
           <div :class="{'tab-pane': true, 'appear': (selected_tab == 'saved'), 'show': (selected_tab == 'saved'), 'active': (selected_tab == 'saved')}">
-            WIP
+            <ul class="list-unstyled components">
+              <div>
+                <li>
+                  <a href="#" aria-expanded="true">
+                    Bookmarks &nbsp;&nbsp;
+                  </a>
+                  <ul class="collapse list-unstyled show">
+                    <li v-for="(bookmark, index) in bookmarks" v-bind:key="bookmark._id">
+                      <a @click="chooseQuestion(bookmark)" href="#" :class="{'selected': (display_message == bookmark.question)}">
+                        {{ index + 1 }}.&nbsp;&nbsp;{{ bookmark.question }}
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+              </div>
+            </ul>
+
           </div>
           <!-- SAVED TAB END -->
         </div>
@@ -110,7 +130,8 @@
         </nav>
         <p>
           <strong class="appear">{{ display_message }}</strong>
-          <i class="fa fa-bookmark" style="font-size:24px; color:white; margin-left: 20px;"></i>
+          <i @click="saveBookmark();" v-if="selected_question && !is_saved" class="fa fa-bookmark" style="font-size:24px; color:white; margin-left: 20px;"></i>
+          <i @click="removeBookmark();" v-if="selected_question && is_saved" class="fa fa-bookmark" style="font-size:24px; color:#8fbc8f; margin-left: 20px;"></i>
         </p>
         <p v-if="selected_question !== null && answer !== null && answer !== ''">
           <strong class="answer-place">Answer:&nbsp;&nbsp;&nbsp;</strong>{{ answer }}
@@ -132,7 +153,6 @@
 </template>
 
 <style lang="scss" scoped>
-
   .answer-place {
     color: #02eba8 !important;
   }
@@ -355,7 +375,6 @@
       (this.CHOOSE_CATEGORY = "Choose a category from left side"),
         (this.CHOOSE_QUESTION = "Now choose a question from the left side");
     },
-    
 
     // Instance variables of the component
     data: () => {
@@ -371,17 +390,108 @@
         is_category_selected: false,
         selected_tab: "questions",
         selected_question: null,
-        answer: null
+        answer: null,
+        bookmarks: [],
+        is_saved: false
       };
+    },
+
+    /**
+     * Method that runs before the component is mount.
+     * This should be done since localtorage scope is not available at server,
+     * so, it needs to wait before mounting it.
+     */
+    beforeMount() {
+      if (JSON.parse(localStorage.getItem('bookmarks'))) {
+        this.bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+      }
+
+      else {
+        this.bookmarks = [];
+      }
     },
 
     // Methods of the component
     methods: {
 
       /**
+       * Method to save bookmark into localstorage
+       * @method saveBookmark
+       */
+      saveBookmark() {
+
+        let bookmark = {
+          _id: this.selected_question._id,
+          question: this.selected_question.question
+        }
+        this.bookmarks.push(bookmark);
+        localStorage.setItem('bookmarks', JSON.stringify(this.bookmarks));
+        this.is_saved = true; // Update the is saved reference to true
+
+      },
+
+      /**
+       * Method to remove bookmark from localstorage
+       * @method removeBookmark
+       */
+      removeBookmark() {
+        // Create a new array of object without the one to remove
+        let new_bookmarks = this.bookmarks.filter((bookmark) => {
+          return bookmark._id !== this.selected_question._id;
+        });
+
+        // Reference the current bookmark variable with the new one to updat the UI
+        this.bookmarks = new_bookmarks;
+
+        // Save it again to localstorage
+        localStorage.setItem('bookmarks', JSON.stringify(this.bookmarks));
+
+        this.is_saved = false; // Update the is saved reference to false
+
+      },
+
+      /**
+       * Method to check is question is already bookmarked
+       * @method isSaved
+       * @returns a boolean statement
+       */
+      isSaved() {
+        if (this.bookmarks) {
+          let i;
+          for (i = 0; i < this.bookmarks.length; i++) {
+            if (this.bookmarks[i]._id === this.selected_question._id) {
+              return true;
+            }
+          }
+          return false;
+        }
+        else {
+          return false;
+        }
+
+      },
+
+      is_bookmarked(id) {
+        if (this.bookmarks) {
+          let i;
+          for (i = 0; i < this.bookmarks.length; i++) {
+            if (this.bookmarks[i]._id === id) {
+              return true;
+            }
+          }
+          return false;
+        }
+        else {
+          return false;
+        }
+      },
+
+      /**
        * Method to autosave answer without any user interaction
        * @method autoSave
        * @return void
+       * 
+       * TODO: Add debounce to avoid saving data in each keyup event
        */
       autoSave() {
         let answer = {
@@ -409,14 +519,17 @@
       chooseQuestion(question) {
         this.display_message = question.question; // Update the correct displayed message
         this.selected_question = question; // Save a reference of the selected object
-
         if (localStorage.getItem(question._id)) {
           this.answer = JSON.parse(localStorage.getItem(question._id)).answer;
         }
-        
+
         else {
           this.answer = null;
         }
+
+        // Check is this question is already saved into the bookmarks
+        this.is_saved = this.isSaved();
+        console.log(this.is_saved);
       },
 
       /**
