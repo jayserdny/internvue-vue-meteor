@@ -2,7 +2,9 @@
   "name": "vue-meteor-demo",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.42",
@@ -28,12 +30,14 @@
     "vue-scrollto": "^2.11.0",
     "vue-supply": "^0.3.0",
     "vuex": "^3.0.1",
-    "vuex-router-sync": "^5.0.0"
+    "vuex-router-sync": "^5.0.0",
+    "snyk": "^1.323.0"
   },
   "devDependencies": {
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "css-loader": "^0.28.11"
-  }
+  },
+  "snyk": true
 }
