@@ -8,7 +8,7 @@
     "@babel/runtime": "^7.0.0-beta.42",
     "apollo-client": "^1.9.3",
     "bcrypt": "^1.0.3",
-    "bootstrap-vue": "^2.0.0-rc.2",
+    "bootstrap-vue": "^2.0.0",
     "core-js": "^2.5.3",
     "intersection-observer": "^0.4.3",
     "isomorphic-fetch": "^2.2.1",
